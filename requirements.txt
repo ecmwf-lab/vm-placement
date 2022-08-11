@@ -1,0 +1,5 @@
+pyyaml
+python-openstackclient
+tqdm
+pygad
+numpy

@@ -1,0 +1,19 @@
+---
+affinity:
+  mars.*:
+    never_with: mars.*
+
+  .*prod.*:
+    never_with: mars.*
+
+  cdsprod-compute-.*:
+    never_with: cdsprod-compute-.*
+
+  (\w+)-compute-(\w+)-.*:
+    always_with: (\w+)-download-(\w+)-.*
+
+  (\w+)-download-(\w+)-.*:
+    always_with: (\w+)-compute-(\w+)-.*
+
+  (\w+)-brokerdb-.*:
+    never_with: (\w+)-brokerdb-.*
