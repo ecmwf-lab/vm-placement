@@ -205,6 +205,10 @@ class Server(Wrapper):
         super().__init__(server)
         self._diagnostics = None
 
+        # Compatibility
+        if hasattr(self, 'hypervisor_hostname'):
+            self.host = self.hypervisor_hostname
+
         if "id" in self.flavor and self.flavor["id"] in FLAVORS:
             self.flavor = FLAVORS[self.flavor["id"]]
             self.memory_size = self.flavor.ram * 1024 * 1024
