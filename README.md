@@ -1,6 +1,6 @@
 # vm-placement
 
-A script that uses genetic algorithms to determine the best placement of VMs on a series of hypervisors based on affinity rules. **Disclaimer:** this script is experimental and provided *as-is*.
+A script that uses [genetic algorithms](https://pygad.readthedocs.io/en/latest/) to determine the best placement of VMs on a series of hypervisors based on affinity rules. **Disclaimer:** this script is experimental and provided *as-is*.
 
 ## Installation
 
