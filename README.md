@@ -1,6 +1,6 @@
 # vm-placement
 
-A script that uses genetic algorithms to determine the best placement of VMs on a series of hypervisors based on affinity rules.
+A script that uses genetic algorithms to determine the best placement of VMs on a series of hypervisors based on affinity rules. **Disclaimer:** this script is experimental and provided *as-is*.
 
 ## Installation
 
@@ -32,9 +32,6 @@ Before you can use the script to place the VMs on the hypervisors in an optimal 
 
 The setup below is used to organise the VMs in the [Climate Data Store](https://cds.climate.copernicus.eu).
 
-- VMs whose names start with `mars` should never be placed on the hypervisors with other VMs also starting with `mars`.
-- VMs that contain `prod` in their names must not be placed on the same hypervisors as the ones whose name starts with `mars`.
-- VMs with `-compute-` in their names should be placed on the same hypervisors as the ones with `-download-` in their names, assuming the parts captured by the parentheses are the same. `cdsprod-compute-0001-af98` will match `cdsprod-download-0001-34ba`.
 
 ```yaml
 ---
@@ -57,6 +54,10 @@ affinity:
   (\w+)-brokerdb-.*:
     never_with: (\w+)-brokerdb-.*
 ```
+- VMs whose names start with `mars` should never be placed on the hypervisors with other VMs also starting with `mars`.
+- VMs that contain `prod` in their names must not be placed on the same hypervisors as the ones whose name starts with `mars`.
+- VMs with `-compute-` in their names should be placed on the same hypervisors as the ones with `-download-` in their names, assuming the parts captured by the parentheses are the same. `cdsprod-compute-0001-af98` will match `cdsprod-download-0001-34ba`.
+
 
 Then run:
 
@@ -76,9 +77,7 @@ For more options, use:
 
     $ ./vm-placement.py --help
 
-### Disclaimer
 
-This script is experimental and provided *as-is*.
 
 ### License
 [Apache License 2.0](LICENSE) In applying this licence, ECMWF does not waive the privileges and immunities
