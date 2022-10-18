@@ -82,3 +82,10 @@ For more options, use:
 ### License
 [Apache License 2.0](LICENSE) In applying this licence, ECMWF does not waive the privileges and immunities
 granted to it by virtue of its status as an intergovernmental organisation nor does it submit to any jurisdiction.
+
+## References
+
+```
+Ahmed Fawzy Gad. PyGAD: An Intuitive Genetic Algorithm Python Library (2021).
+https://doi.org/10.48550/arXiv.2106.06158
+```
